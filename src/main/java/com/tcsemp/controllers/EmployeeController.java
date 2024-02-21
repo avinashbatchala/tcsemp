@@ -22,10 +22,6 @@ public class EmployeeController {
     @PostMapping("/createEmployee")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
 
-        if(validatorService.validateEmployee(employee)) {
-            return ResponseEntity.ok(employeeService.createEmployee(employee));
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
+       return ResponseEntity.ok(employeeService.createEmployee(employee));
     }
 }

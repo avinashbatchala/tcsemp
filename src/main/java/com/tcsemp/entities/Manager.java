@@ -6,15 +6,13 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Set;
 
-
 @Document
 @Getter
 @Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
-
 @Builder
-public class Employee {
+public class Manager {
 
     @MongoId
     private String id;
@@ -24,8 +22,5 @@ public class Employee {
     private String email;
     private String phone;
     private String role;
-    private Set<String> addresses;
-    private Set<Client> clients;
-    private Manager manager;
-
+    private Set<Employee> employees;
 }

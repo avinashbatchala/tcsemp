@@ -31,7 +31,7 @@ public class ValidatorServiceImpl implements ValidatorService {
         //Write a method to validate the employee object and return which field went wrong
         return validateEmail(employee.getEmail()) &&
                 validatePhone(employee.getPhone()) &&
-                validateAddress(employee.getAddress()) &&
+              //  validateAddress(employee.getAddress()) &&
                 validateName(employee.getFirstName()) &&
                 validateName(employee.getLastName());
     }

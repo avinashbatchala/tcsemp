@@ -1,18 +1,17 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:tcsemp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+  data:
+    mongodb:
+      uri: mongodb+srv://tcsemp:KGDYtY7becFPJkRw@tcsemp.uocygyg.mongodb.net/?retryWrites=true&w=majority
+      database: tcsemp
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
 
 server:
   port: 8080
+mongock:
+  enabled: true
+  migration-scan-package:
+    - com.tcs.mongo
+  runner-type: applicationrunner
